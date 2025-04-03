@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>記憶配對遊戲</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>記憶配對遊戲</h1>
+    <div id="app">
+        <div id="game-info">
+            <div id="score">分數: 0</div>
+            <div id="moves">步數: 0</div>
+            <button id="start-btn">開始遊戲</button>
+            <button id="reset-btn">重置遊戲</button>
+            <button id="home-btn">返回主頁</button>
+        </div>
+        <div id="game-board"></div>
+        <div class="instructions">
+            <h3>遊戲說明:</h3>
+            <p>點擊卡片將其翻開，找到所有匹配的對子來獲勝！</p>
+            <p>記住卡片的位置，盡量用最少的步數完成遊戲。</p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

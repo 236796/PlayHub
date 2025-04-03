@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1E1E2E;
+            font-family: 'Arial', sans-serif;
+            color: white;
+        }
+
+        h1 {
+            color: #FFFFFF;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            margin-bottom: 10px;
+        }
+
+        #game-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        canvas {
+            background-color: black;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        #score-container {
+            display: flex;
+            justify-content: space-between;
+            width: 600px;
+            margin-bottom: 10px;
+        }
+
+        #player1-score, #player2-score {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        #start-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #start-btn:hover {
+            background-color: #45a049;
+        }
+
+        #reset-btn {
+            background-color: #f44336;
+            color: white;
+        }
+
+        #reset-btn:hover {
+            background-color: #d32f2f;
+        }
+
+        #home-btn {
+            background-color: #2196F3;
+            color: white;
+        }
+
+        #home-btn:hover {
+            background-color: #1976D2;
+        }
+
+        .instructions {
+            max-width: 600px;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            border-left: 4px solid #FFFFFF;
+        }
+
+        .instructions h3 {
+            color: #FFFFFF;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pong</h1>
+    
+    <div id="score-container">
+        <div id="player1-score">玩家 1: 0</div>
+        <div id="player2-score">玩家 2: 0</div>
+    </div>
+    
+    <div id="game-container">
+        <canvas id="game-canvas" width="600" height="400"></canvas>
+    </div>
+    
+    <div class="controls">
+        <button id="start-btn">開始遊戲</button>
+        <button id="reset-btn">重置遊戲</button>
+        <button id="home-btn">返回主頁</button>
+    </div>
+    
+    <div class="instructions">
+        <h3>遊戲說明:</h3>
+        <p>玩家 1 使用 W 和 S 鍵控制左側球拍上下移動。</p>
+        <p>玩家 2 使用方向鍵 ↑ 和 ↓ 控制右側球拍上下移動。</p>
+        <p>先得到 10 分的玩家獲勝！</p>
+    </div>
+
+    <script src="pong.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 - 遊戲合集</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            color: white;
+            padding: 20px;
+        }
+
+        .game-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .score-container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid !important;
+            grid-template-columns: repeat(8, 40px) !important;
+            grid-template-rows: repeat(8, 40px) !important;
+            gap: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+            width: 365px;
+            height: 365px;
+            margin: 0 auto;
+        }
+
+        .cell {
+            width: 100%;
+            height: 100%;
+            min-height: 40px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            transition: all 0.3s ease-in-out;
+            transform: scale(1);
+            position: relative;
+        }
+
+        .cell[data-value="2"] { background: #eee4da; color: #776e65; }
+        .cell[data-value="4"] { background: #ede0c8; color: #776e65; }
+        .cell[data-value="8"] { background: #f2b179; }
+        .cell[data-value="16"] { background: #f59563; }
+        .cell[data-value="32"] { background: #f67c5f; }
+        .cell[data-value="64"] { background: #f65e3b; }
+        .cell[data-value="128"] { background: #edcf72; font-size: 14px; }
+        .cell[data-value="256"] { background: #edcc61; font-size: 14px; }
+        .cell[data-value="512"] { background: #edc850; font-size: 14px; }
+        .cell[data-value="1024"] { background: #edc53f; font-size: 12px; }
+        .cell[data-value="2048"] { background: #edc22e; font-size: 12px; }
+        .cell[data-value="4096"] { background: #3c3a32; font-size: 12px; }
+
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        .home-btn {
+            background: #2196F3;
+        }
+
+        .home-btn:hover {
+            background: #1e88e5;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="score-container">
+                <div>分數</div>
+                <div id="score">0</div>
+            </div>
+            <div class="score-container">
+                <div>最高分</div>
+                <div id="best-score">0</div>
+            </div>
+        </div>
+
+        <div class="grid" id="grid"></div>
+
+        <div class="controls">
+            <button id="new-game-btn">新遊戲</button>
+            <button class="home-btn" onclick="window.location.href='index.html'">返回主頁</button>
+        </div>
+    </div>
+
+    <script src="2048.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>坦克大戰</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+        }
+        #game-container {
+            margin: 20px;
+        }
+        #game-canvas {
+            border: 2px solid #333;
+            background-color: #111;
+            width: 600px;
+            height: 600px;
+        }
+        #game-info {
+            display: flex;
+            justify-content: space-between;
+            width: 600px;
+            margin-top: 10px;
+        }
+        .player-info {
+            display: flex;
+            flex-direction: column;
+        }
+        #controls {
+            margin-top: 20px;
+            text-align: center;
+        }
+        #player1-score, #player1-lives, #player2-score, #player2-lives {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        #start-btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #start-btn:hover {
+            background-color: #45a049;
+        }
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #666;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back-btn:hover {
+            background-color: #555;
+        }
+        .instructions {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .player1 {
+            color: #FF0000;
+        }
+        .player2 {
+            color: #0000FF;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-btn">返回選單</a>
+    <h1>坦克大戰</h1>
+    <div id="game-container">
+        <canvas id="game-canvas" width="600" height="600"></canvas>
+        <div id="game-info">
+            <div class="player-info player1">
+                <div id="player1-score">分數: 0</div>
+                <div id="player1-lives">生命: 3</div>
+            </div>
+            <div class="player-info player2">
+                <div id="player2-score">分數: 0</div>
+                <div id="player2-lives">生命: 3</div>
+            </div>
+        </div>
+        <div id="controls">
+            <button id="start-btn">開始遊戲</button>
+        </div>
+    </div>
+    <div class="instructions">
+        <h3>遊戲說明:</h3>
+        <p><span class="player1">玩家1 (紅色坦克)</span>: WASD 移動, F 或空格鍵射擊</p>
+        <p><span class="player2">玩家2 (藍色坦克)</span>: 方向鍵移動, Enter 或 L 鍵射擊</p>
+        <p>P 鍵: 暫停遊戲</p>
+        <p>目標: 擊中對方坦克獲得分數，率先消耗完對方的生命值獲勝！</p>
+    </div>
+    <script src="tank.js"></script>
+</body>
+</html>

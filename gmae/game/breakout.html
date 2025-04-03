@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>打磚塊</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+        }
+        #game-container {
+            margin: 20px;
+        }
+        #game-canvas {
+            border: 2px solid #333;
+            background-color: #111;
+            width: 640px;
+            height: 480px;
+        }
+        #game-info {
+            display: flex;
+            justify-content: space-between;
+            width: 640px;
+            margin-top: 10px;
+        }
+        #controls {
+            margin-top: 20px;
+            text-align: center;
+        }
+        #score, #lives {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        #start-btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #start-btn:hover {
+            background-color: #45a049;
+        }
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #666;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back-btn:hover {
+            background-color: #555;
+        }
+        .instructions {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-btn">返回選單</a>
+    <h1>打磚塊</h1>
+    <div id="game-container">
+        <canvas id="game-canvas" width="640" height="480"></canvas>
+        <div id="game-info">
+            <div id="score">分數: 0</div>
+            <div id="lives">生命: 3</div>
+        </div>
+        <div id="controls">
+            <button id="start-btn">開始遊戲</button>
+        </div>
+    </div>
+    <div class="instructions">
+        <h3>遊戲說明:</h3>
+        <p>← → 方向鍵或 A D 鍵: 左右移動平台</p>
+        <p>滑鼠: 移動平台</p>
+        <p>P 鍵: 暫停遊戲</p>
+        <p>目標: 反彈球擊碎所有磚塊，不要讓球掉落！</p>
+    </div>
+    <script src="breakout.js"></script>
+</body>
+</html>

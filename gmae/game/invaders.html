@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>大蜜蜂</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+        }
+        #game-container {
+            margin: 20px;
+        }
+        #game-canvas {
+            border: 2px solid #333;
+            background-color: #000;
+            width: 600px;
+            height: 600px;
+        }
+        #game-info {
+            display: flex;
+            justify-content: space-between;
+            width: 600px;
+            margin-top: 10px;
+        }
+        #controls {
+            margin-top: 20px;
+            text-align: center;
+        }
+        #score, #level, #lives {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        #start-btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #start-btn:hover {
+            background-color: #45a049;
+        }
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #666;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back-btn:hover {
+            background-color: #555;
+        }
+        .instructions {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-btn">返回選單</a>
+    <h1>大蜜蜂</h1>
+    <div id="game-container">
+        <canvas id="game-canvas" width="600" height="600"></canvas>
+        <div id="game-info">
+            <div id="score">分數: 0</div>
+            <div id="level">等級: 1</div>
+            <div id="lives">生命: 3</div>
+        </div>
+        <div id="controls">
+            <button id="start-btn">開始遊戲</button>
+        </div>
+    </div>
+    <div class="instructions">
+        <h3>遊戲說明:</h3>
+        <p>← → 方向鍵或 A D 鍵: 左右移動砲台</p>
+        <p>空格鍵或 F 鍵: 發射子彈</p>
+        <p>P 鍵: 暫停遊戲</p>
+        <p>目標: 消滅所有外星人，避免被外星人擊中或讓外星人到達底部！</p>
+    </div>
+    <script src="invaders.js"></script>
+</body>
+</html>
